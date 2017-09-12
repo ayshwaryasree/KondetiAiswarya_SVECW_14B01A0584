@@ -1,5 +1,3 @@
-package test;
-
 import java.util.Date;
 
 import javax.swing.text.Utilities;
@@ -223,13 +221,45 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public Student[] getStudentsWithMaxAvgMark() {
 		// Add your implementation here
-		return null;
+		double max = students[0].getAvgMark();
+		for(int i = 1; i < students.length; i++) {
+			double temp = students[i].getAvgMark();
+			if(temp > max) {
+				max = temp;
+			}
+		}
+		Student[] arr = new Student[students.length];
+		int j = 0;
+		for(int i = 0; i < students.length; i++) {
+			if(max == students[i].getAvgMark()) {
+				arr[j] = students[i];
+				j++;
+			}
+		}
+		return arr;
 	}
 
 	@Override
 	public Student getNextStudent(Student student) {
 		// Add your implementation here
-		return null;
+		int pos = -1;
+		for(int i = 0; i < students.length; i++) {
+			if(compare_obj(students[i], student)) {
+				pos = i;
+				break;
+			}
+		}
+		if(pos == -1) {
+			return null;
+		}
+		else {
+			if(pos == students.length - 1) {
+				return null;
+			}
+			else {
+				return students[pos + 1];
+			}
+		}
 	}
 }
 
