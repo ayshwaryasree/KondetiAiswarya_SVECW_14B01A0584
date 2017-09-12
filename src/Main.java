@@ -24,10 +24,8 @@ public class Main {
             sg.add(s2, 3);
             sg.addFirst(s2);
             sg.addLast(s[0]);
-            sg.removeFromIndex(2);
-            sg.
-            System.out.println(sg.getStudent(3).getId());
-
+            sg.remove(s[0]);
+            
 
 		} catch (ParseException e) {
 			// TODO Auto-generated catch block
