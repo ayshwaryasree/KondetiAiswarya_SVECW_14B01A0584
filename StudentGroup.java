@@ -32,14 +32,8 @@ public class StudentGroup implements StudentArrayOperation {
 	@Override
 	public void setStudents(Student[] students) {
 		// Add your implementation here
-		if(students == null) {
-			throw new IllegalArgumentException();
-		}
-		
-		for(int i = 0; i < students.length; i++) {
-		    this.students[i] = students[i];
-		}
 	}
+
 	@Override
 	public Student getStudent(int index) {
 		// Add your implementation here
